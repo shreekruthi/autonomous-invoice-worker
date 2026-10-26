@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CentrAlign • Invoice Worker</title>
+  <link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="/"><span class="mark">C</span> CentrAlign <span class="muted">/</span> Task Worker</a>
+  <div><span class="pill" id="mode">Connecting</span> <a href="/docs" target="_blank" rel="noreferrer">API docs ↗</a></div>
+</header>
+<main>
+  <section class="intro"><div class="eyebrow">AUTONOMOUS OPERATIONS · SANDBOX</div>
+    <h1>From request to<br><span>verified record.</span></h1>
+    <p>A focused invoice worker. Every action observed. Every write checked. Human approval when it matters.</p>
+  </section>
+  <div class="notice" id="mode-note">Loading configuration…</div>
+  <details class="credentials"><summary>Connection &amp; credentials</summary><div class="credential-grid">
+    <label>Worker token<input id="worker-token" type="password" value="local-worker" autocomplete="off"></label>
+    <label>Reviewer token<input id="reviewer-token" type="password" value="local-reviewer" autocomplete="off"></label>
+    <label>Reviewer name<input id="reviewer-name" value="Sandbox reviewer" maxlength="100"></label>
+    <button id="connect" class="secondary">Connect</button>
+  </div><p>Local sandbox defaults. Tokens stay in this page's memory. Replace them in your environment before sharing.</p></details>
+  <section class="composer card">
+    <div class="section-title"><h2>What needs doing?</h2><span class="muted">One vendor · latest invoice · INR</span></div>
+    <form id="task-form"><label class="sr-only" for="goal">Task request</label>
+      <textarea id="goal" rows="2" minlength="10" maxlength="2000" required>Find the latest invoice from Acme Supplies, enter it into our internal system, and verify it.</textarea>
+      <button type="submit" id="run">Run task <span>↗</span></button>
+    </form>
+    <div class="examples"><span>Try a scenario</span><button data-goal="Record the latest invoice from Acme Supplies.">Standard</button>
+      <button data-goal="Record the newest invoice from Orbit Cloud.">Approval required</button>
+      <button data-goal="Record the latest invoice from Broken Labs.">Missing data</button>
+      <button id="inject">Inject retry + lost response</button></div>
+    <p id="feedback" role="status" aria-live="polite"></p>
+  </section>
+  <section class="workspace">
+    <aside class="card task-panel"><div class="section-title"><h2>Work history</h2><button id="refresh" class="text-button">Refresh ↻</button></div><div id="tasks"><p class="muted">No tasks yet.</p></div></aside>
+    <section class="card detail-panel">
+      <nav class="tabs" aria-label="Workspace views"><button class="active" data-tab="trace">Task trace</button><button data-tab="ledger">Company ledger</button><button data-tab="inbox">Invoice inbox</button></nav>
+      <div id="trace" class="tab-content"><div class="empty"><span>◎</span><h2>Work you can inspect.</h2><p>Run a task to see its plan, observations, approvals and completion evidence.</p></div></div>
+      <div id="ledger" class="tab-content" hidden></div><div id="inbox" class="tab-content" hidden></div>
+    </section>
+  </section>
+  <footer>Built for the CentrAlign AI Engineering Intern assignment. Synthetic invoices. Real sandbox writes. No payments.</footer>
+</main>
+</body></html>

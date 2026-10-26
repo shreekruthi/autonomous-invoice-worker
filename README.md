@@ -20,6 +20,8 @@ No silent fallback between modes. The UI and every task record show the mode. Au
 
 **Final validation:** **127 tests passed**, **89.6% coverage**, and **10/10 deterministic reliability scenarios**. Lint and formatting passed. Separate [actual live Groq evidence](examples/live-evidence/manifest.json) shows a human-approved write, repeated requests verifying the same record, and missing-data blocking. See the [final check report](docs/final-checks/report.json) for provenance; scripted provider tests and the deterministic score are not a live-model autonomy benchmark.
 
+**Additional live proof:** [Groq failure recovery and checkpoint evidence](examples/live-recovery/manifest.json) includes injected read/write-response retries, duplicate protection, an Orbit resume followed by separate approval, and missing-data blocking. [GitHub source checks](https://github.com/shreekruthi/autonomous-invoice-worker/actions/runs/40282386683) passed on Python 3.11–3.13. The applicant is recording a preferred manual video; its public link is pending.
+
 **Submitting this assignment?** Start with the [submission guide](docs/SUBMISSION_GUIDE.md), [live demo sequence](docs/DEMO_SCRIPT.md), [form-answer drafts](docs/FORM_ANSWERS.md) and [interview walkthrough](docs/INTERVIEW_PREP.md). `VERIFY.ps1` reproduces the checks; `RUN.ps1 -Mode groq -Fresh -Faults` starts a separate fresh sandbox for recording. The source repository is [https://github.com/shreekruthi/autonomous-invoice-worker](https://github.com/shreekruthi/autonomous-invoice-worker). A reviewed live recording URL still needs to be added.
 
 ![Running sandbox dashboard](docs/assets/dashboard.png)
@@ -133,7 +135,7 @@ python -m scripts.evaluate --out artifacts/evaluation.json
 
 Tests cover latest-invoice selection, exact money handling, duplicate/concurrent submissions, before/after-commit failures, bounded retries, recovery across restart, approval/rejection, stale source data, forged approval memory, verification mismatch, missing fields, clarification, unsupported requests, schema guards, API authorization and the Responses HTTP contract. The deterministic injection test verifies that application approval controls survive hostile source text; **it does not measure whether a live model resists injection**.
 
-The evaluation runner uses fresh temporary databases and checks expected outcome, record count and evidence across ten named scenarios. It is a deterministic reliability evaluation, not an LLM benchmark. CI runs tests, formatting and lint on Python 3.11–3.13; CI results are only known once the workflow actually runs on GitHub.
+The evaluation runner uses fresh temporary databases and checks expected outcome, record count and evidence across ten named scenarios. It is a deterministic reliability evaluation, not an LLM benchmark. CI runs tests, formatting and lint on Python 3.11–3.13; [The source CI run](https://github.com/shreekruthi/autonomous-invoice-worker/actions/runs/40282386683) passed all three Python versions on Ubuntu.
 
 ### CLI and network demo
 

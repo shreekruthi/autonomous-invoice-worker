@@ -54,8 +54,17 @@ def main():
         if args.faults:
             page.locator("#inject").click()
             page.get_by_text("One read outage and one lost write response armed.", exact=False).wait_for()
-        page.locator("#goal").fill("Find the latest invoice from Acme Supplies, enter it, and verify it.")
-        page.locator("#run").click()
+
+        def submit(goal, expected_status):
+            page.locator("#goal").fill(goal)
+            page.locator("#run").click()
+            # An older task may already show the expected summary/evidence. Wait for this
+            # submission's handler to finish rendering before inspecting its outcome.
+            page.wait_for_function("!document.querySelector('#run').disabled", timeout=240000)
+            status = page.locator("#trace .task-heading .pill").inner_text().strip().lower()
+            assert status == expected_status, f"Expected {expected_status}, got {status}; inspect task trace"
+
+        submit("Find the latest invoice from Acme Supplies, enter it, and verify it.", "succeeded")
         page.locator(".evidence").wait_for(timeout=240000)
         page.screenshot(path=str(out / "01-verified.png"), full_page=True)
         # Brief holds are intentional for a readable recording, not test synchronization.
@@ -65,19 +74,17 @@ def main():
         page.screenshot(path=str(out / "02-ledger.png"), full_page=True)
         page.wait_for_timeout(1000)
         page.locator('[data-tab="trace"]').click()
-        page.locator("#run").click()
+        submit("Find the latest invoice from Acme Supplies, enter it, and verify it.", "succeeded")
         page.locator(".task-summary").filter(has_text="Verified existing ACM-1020").wait_for(timeout=240000)
         page.wait_for_timeout(1000)
-        page.locator("#goal").fill("Record the newest invoice from Orbit Cloud.")
-        page.locator("#run").click()
+        submit("Record the newest invoice from Orbit Cloud.", "awaiting approval")
         page.locator(".review").wait_for(timeout=240000)
         page.screenshot(path=str(out / "03-approval.png"), full_page=True)
         page.wait_for_timeout(1200)
         page.get_by_role("button", name="Approve & resume", exact=True).click()
         page.locator(".evidence").wait_for(timeout=240000)
         page.wait_for_timeout(1200)
-        page.locator("#goal").fill("Record the latest invoice from Broken Labs.")
-        page.locator("#run").click()
+        submit("Record the latest invoice from Broken Labs.", "needs input")
         page.get_by_text("Expected exactly one Due field; ask for a corrected source", exact=True).wait_for(
             timeout=240000
         )

@@ -1,0 +1,14 @@
+{
+  "vendors": [
+    {"id":"acme","name":"Acme Supplies"},
+    {"id":"orbit","name":"Orbit Cloud"},
+    {"id":"broken","name":"Broken Labs"},
+    {"id":"empty","name":"Empty Studio"}
+  ],
+  "invoices": [
+    {"id":"acme-old","vendor_id":"acme","issued_at":"2026-09-01","subject":"September invoice","body":"Invoice: ACM-0901\nVendor: acme\nAmount: 800.00\nCurrency: INR\nIssued: 2026-09-01\nDue: 2026-09-30"},
+    {"id":"acme-latest","vendor_id":"acme","issued_at":"2026-10-20","subject":"October office supplies","body":"Invoice: ACM-1020\nVendor: acme\nAmount: 1250.50\nCurrency: INR\nIssued: 2026-10-20\nDue: 2026-11-15\nNote: Thank you for your business."},
+    {"id":"orbit-latest","vendor_id":"orbit","issued_at":"2026-10-22","subject":"October cloud services","body":"Invoice: ORB-1022\nVendor: orbit\nAmount: 12500.00\nCurrency: INR\nIssued: 2026-10-22\nDue: 2026-11-10"},
+    {"id":"broken-latest","vendor_id":"broken","issued_at":"2026-10-23","subject":"Missing due date — requires correction","body":"Invoice: BRK-1023\nVendor: broken\nAmount: 900.00\nCurrency: INR\nIssued: 2026-10-23"}
+  ]
+}

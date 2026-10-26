@@ -22,7 +22,7 @@ No silent fallback between modes. The UI and every task record show the mode. Au
 
 **Additional live proof:** [Groq failure recovery and checkpoint evidence](examples/live-recovery/manifest.json) includes injected read/write-response retries, duplicate protection, an Orbit resume followed by separate approval, and missing-data blocking. [GitHub source checks](https://github.com/shreekruthi/autonomous-invoice-worker/actions/runs/40282386683) passed on Python 3.11–3.13. The applicant is recording a preferred manual video; its public link is pending.
 
-**Submitting this assignment?** Start with the [submission guide](docs/SUBMISSION_GUIDE.md), [live demo sequence](docs/DEMO_SCRIPT.md), [form-answer drafts](docs/FORM_ANSWERS.md) and [interview walkthrough](docs/INTERVIEW_PREP.md). `VERIFY.ps1` reproduces the checks; `RUN.ps1 -Mode groq -Fresh -Faults` starts a separate fresh sandbox for recording. The source repository is [https://github.com/shreekruthi/autonomous-invoice-worker](https://github.com/shreekruthi/autonomous-invoice-worker). A reviewed live recording URL still needs to be added.
+
 
 ![Running sandbox dashboard](docs/assets/dashboard.png)
 

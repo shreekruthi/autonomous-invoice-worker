@@ -1,0 +1,11 @@
+services:
+  worker:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    env_file: .env
+    volumes:
+      - worker-data:/app/data
+    init: true
+volumes:
+  worker-data:

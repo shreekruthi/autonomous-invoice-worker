@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-10-26T05:52:44.823720+00:00",
+  "created_at": "2026-10-26T06:49:17.909409+00:00",
   "python": "3.12.14",
   "platform": "Windows",
-  "source_sha256": "f4f6fc4b48c55a16d5eb7f4b37a48c446bdee4c1be90842c26370029c8b62a25",
+  "source_sha256": "d385f03b729596c8f7e917cacd6d81d9d2b3f1136ee41e0853f731e7ce8b4038",
   "live_llm_evaluated": false,
   "full_suite_completed": true,
   "passed": true,
@@ -21,7 +21,7 @@
       "timed_out": false,
       "log": "format.log",
       "returncode": 0,
-      "seconds": 0.14
+      "seconds": 0.12
     },
     {
       "name": "tests",
@@ -29,7 +29,7 @@
       "timed_out": false,
       "log": "tests.log",
       "returncode": 0,
-      "seconds": 27.25
+      "seconds": 21.86
     },
     {
       "name": "reliability",
@@ -37,7 +37,7 @@
       "timed_out": false,
       "log": "reliability.log",
       "returncode": 0,
-      "seconds": 5.55
+      "seconds": 5.03
     }
   ],
   "tests": {

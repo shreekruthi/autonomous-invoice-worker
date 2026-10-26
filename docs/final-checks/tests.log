@@ -9,5 +9,5 @@
 =============================== tests coverage ================================
 ______________ coverage: platform win32, python 3.12.14-final-0 _______________
 
-Coverage JSON written to file <workspace>\outputs\autonomous-ai-worker\artifacts\submission-check\coverage.json
-127 passed, 1 warning in 25.19s
+Coverage JSON written to file <project>\artifacts\submission-check\coverage.json
+127 passed, 1 warning in 19.75s

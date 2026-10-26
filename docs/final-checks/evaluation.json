@@ -13,7 +13,7 @@
       "verified": true,
       "steps": 9,
       "tool_errors": 0,
-      "elapsed_ms": 391
+      "elapsed_ms": 328
     },
     {
       "scenario": "read-retry",
@@ -24,7 +24,7 @@
       "verified": true,
       "steps": 9,
       "tool_errors": 1,
-      "elapsed_ms": 484
+      "elapsed_ms": 437
     },
     {
       "scenario": "lost-write-response",
@@ -35,7 +35,7 @@
       "verified": true,
       "steps": 9,
       "tool_errors": 1,
-      "elapsed_ms": 532
+      "elapsed_ms": 484
     },
     {
       "scenario": "duplicate",
@@ -46,7 +46,7 @@
       "verified": true,
       "steps": 8,
       "tool_errors": 0,
-      "elapsed_ms": 813
+      "elapsed_ms": 625
     },
     {
       "scenario": "approval-pause",
@@ -68,7 +68,7 @@
       "verified": true,
       "steps": 10,
       "tool_errors": 0,
-      "elapsed_ms": 438
+      "elapsed_ms": 422
     },
     {
       "scenario": "approval-reject",
@@ -79,7 +79,7 @@
       "verified": false,
       "steps": 8,
       "tool_errors": 0,
-      "elapsed_ms": 360
+      "elapsed_ms": 297
     },
     {
       "scenario": "missing-field",
@@ -90,7 +90,7 @@
       "verified": false,
       "steps": 6,
       "tool_errors": 0,
-      "elapsed_ms": 218
+      "elapsed_ms": 250
     },
     {
       "scenario": "no-invoices",
@@ -101,7 +101,7 @@
       "verified": false,
       "steps": 5,
       "tool_errors": 0,
-      "elapsed_ms": 188
+      "elapsed_ms": 187
     },
     {
       "scenario": "verification-mismatch",
@@ -112,7 +112,7 @@
       "verified": false,
       "steps": 9,
       "tool_errors": 0,
-      "elapsed_ms": 359
+      "elapsed_ms": 391
     }
   ]
 }

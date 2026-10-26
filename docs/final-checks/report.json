@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-10-26T05:52:44.823720+00:00",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "source_sha256": "f4f6fc4b48c55a16d5eb7f4b37a48c446bdee4c1be90842c26370029c8b62a25",
+  "live_llm_evaluated": false,
+  "full_suite_completed": true,
+  "passed": true,
+  "stages": [
+    {
+      "name": "lint",
+      "passed": true,
+      "timed_out": false,
+      "log": "lint.log",
+      "returncode": 0,
+      "seconds": 0.12
+    },
+    {
+      "name": "format",
+      "passed": true,
+      "timed_out": false,
+      "log": "format.log",
+      "returncode": 0,
+      "seconds": 0.14
+    },
+    {
+      "name": "tests",
+      "passed": true,
+      "timed_out": false,
+      "log": "tests.log",
+      "returncode": 0,
+      "seconds": 27.25
+    },
+    {
+      "name": "reliability",
+      "passed": true,
+      "timed_out": false,
+      "log": "reliability.log",
+      "returncode": 0,
+      "seconds": 5.55
+    }
+  ],
+  "tests": {
+    "tests": 127,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

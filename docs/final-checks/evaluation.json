@@ -1,0 +1,118 @@
+{
+  "mode": "deterministic_demo",
+  "live_llm_evaluated": false,
+  "passed": 10,
+  "total": 10,
+  "scenarios": [
+    {
+      "scenario": "standard",
+      "passed": true,
+      "status": "succeeded",
+      "expected_status": "succeeded",
+      "record_count": 1,
+      "verified": true,
+      "steps": 9,
+      "tool_errors": 0,
+      "elapsed_ms": 391
+    },
+    {
+      "scenario": "read-retry",
+      "passed": true,
+      "status": "succeeded",
+      "expected_status": "succeeded",
+      "record_count": 1,
+      "verified": true,
+      "steps": 9,
+      "tool_errors": 1,
+      "elapsed_ms": 484
+    },
+    {
+      "scenario": "lost-write-response",
+      "passed": true,
+      "status": "succeeded",
+      "expected_status": "succeeded",
+      "record_count": 1,
+      "verified": true,
+      "steps": 9,
+      "tool_errors": 1,
+      "elapsed_ms": 532
+    },
+    {
+      "scenario": "duplicate",
+      "passed": true,
+      "status": "succeeded",
+      "expected_status": "succeeded",
+      "record_count": 1,
+      "verified": true,
+      "steps": 8,
+      "tool_errors": 0,
+      "elapsed_ms": 813
+    },
+    {
+      "scenario": "approval-pause",
+      "passed": true,
+      "status": "awaiting_approval",
+      "expected_status": "awaiting_approval",
+      "record_count": 0,
+      "verified": false,
+      "steps": 8,
+      "tool_errors": 0,
+      "elapsed_ms": 281
+    },
+    {
+      "scenario": "approval-resume",
+      "passed": true,
+      "status": "succeeded",
+      "expected_status": "succeeded",
+      "record_count": 1,
+      "verified": true,
+      "steps": 10,
+      "tool_errors": 0,
+      "elapsed_ms": 438
+    },
+    {
+      "scenario": "approval-reject",
+      "passed": true,
+      "status": "rejected",
+      "expected_status": "rejected",
+      "record_count": 0,
+      "verified": false,
+      "steps": 8,
+      "tool_errors": 0,
+      "elapsed_ms": 360
+    },
+    {
+      "scenario": "missing-field",
+      "passed": true,
+      "status": "needs_input",
+      "expected_status": "needs_input",
+      "record_count": 0,
+      "verified": false,
+      "steps": 6,
+      "tool_errors": 0,
+      "elapsed_ms": 218
+    },
+    {
+      "scenario": "no-invoices",
+      "passed": true,
+      "status": "needs_input",
+      "expected_status": "needs_input",
+      "record_count": 0,
+      "verified": false,
+      "steps": 5,
+      "tool_errors": 0,
+      "elapsed_ms": 188
+    },
+    {
+      "scenario": "verification-mismatch",
+      "passed": true,
+      "status": "needs_input",
+      "expected_status": "needs_input",
+      "record_count": 1,
+      "verified": false,
+      "steps": 9,
+      "tool_errors": 0,
+      "elapsed_ms": 359
+    }
+  ]
+}

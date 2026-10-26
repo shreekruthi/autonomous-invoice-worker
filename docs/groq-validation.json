@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-26",
+  "provider": "groq",
+  "model": "openai/gpt-oss-20b",
+  "final_full_suite": {
+    "tests": 127,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "full_suite_rerun_completed": true,
+  "run_origin": "User executed VERIFY.ps1 in normal PowerShell; generated files read back by agent",
+  "source_sha256": "f4f6fc4b48c55a16d5eb7f4b37a48c446bdee4c1be90842c26370029c8b62a25",
+  "coverage_percent": 89.58,
+  "lint_passed": true,
+  "formatting_passed": true,
+  "deterministic_reliability": {
+    "passed": 10,
+    "total": 10,
+    "live_llm_evaluated": false
+  },
+  "live_groq_executed": true,
+  "live_evidence_manifest": "../examples/live-evidence/manifest.json",
+  "live_cases": [
+    "human-approved new write and independent verification",
+    "duplicate requests reuse one Acme row",
+    "missing due field blocks Broken Labs write"
+  ],
+  "provider_wait_events_observed": 4,
+  "live_model_success_rate_measured": false,
+  "live_injected_tool_failure_recovery_recorded": false,
+  "legacy_verified_acme_live_resume_confirmed": false,
+  "docker_built": false,
+  "github_ci_executed": false,
+  "historical_fixes": [
+    "Nine-step plan rejected by cosmetic maxItems=8; now bounded at 24 without changing execution budget",
+    "Quota failure after successful verification; executor now completes without a final model call",
+    "Repeated quota exhaustion; provider remaining/reset headers now pace subsequent requests"
+  ]
+}

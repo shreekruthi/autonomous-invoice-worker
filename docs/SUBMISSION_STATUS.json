@@ -1,0 +1,21 @@
+{
+  "code_and_docs_prepared": true,
+  "final_checks_passed": true,
+  "full_suite_tests": 127,
+  "coverage_percent": 89.6,
+  "deterministic_scenarios_passed": "10/10",
+  "actual_live_groq_evidence_included": true,
+  "deterministic_recording_included": true,
+  "project_answers_drafted_from_actual_form": true,
+  "form_filled": false,
+  "form_submitted": false,
+  "repository_url": "https://github.com/shreekruthi/autonomous-invoice-worker",
+  "hosted_live_video_url": null,
+  "pending": [
+    "Verify the final GitHub source upload and remote Actions results",
+    "Record/review and host a live demonstration",
+    "Add tested links to README and form",
+    "Applicant reviews explanations and submits declarations manually"
+  ],
+  "shortlisting_guaranteed": false
+}

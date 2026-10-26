@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-25",
+  "platform": "Windows",
+  "python": "3.12.14",
+  "tests": {
+    "tests": 61,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_seconds": 24.469,
+  "coverage_percent": 87.98882681564245,
+  "coverage_by_module": {
+    "worker/__init__.py": 100.0,
+    "worker/__main__.py": 0.0,
+    "worker/api.py": 96.12403100775194,
+    "worker/cli.py": 0.0,
+    "worker/company.py": 93.47826086956522,
+    "worker/config.py": 84.84848484848484,
+    "worker/domain.py": 97.91666666666667,
+    "worker/engine.py": 91.66666666666667,
+    "worker/planner.py": 96.03960396039604,
+    "worker/store.py": 97.29729729729729
+  },
+  "lint_passed": true,
+  "formatting_passed": true,
+  "editable_install_passed": true,
+  "cli_run_show_export_passed": true,
+  "network_demo_passed": true,
+  "browser": {
+    "passed": true,
+    "console_errors": [],
+    "record_count": 2,
+    "mode": "demo",
+    "scenarios": 4
+  },
+  "live_provider_executed": false,
+  "docker_built": false,
+  "github_ci_executed": false,
+  "video_sha256": "035e9f7cb581b115f608d11353b3ef8022fd0a9fe5b52e252ae1ce4cac0a067b",
+  "dependencies": {
+    "fastapi": "0.162.0",
+    "pydantic": "2.14.1",
+    "httpx": "0.28.1",
+    "uvicorn": "0.54.0",
+    "pytest": "9.1.1",
+    "ruff": "0.17.2",
+    "playwright": "1.64.1"
+  }
+}

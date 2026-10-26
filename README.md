@@ -20,7 +20,7 @@ No silent fallback between modes. The UI and every task record show the mode. Au
 
 **Final validation:** **127 tests passed**, **89.6% coverage**, and **10/10 deterministic reliability scenarios**. Lint and formatting passed. Separate [actual live Groq evidence](examples/live-evidence/manifest.json) shows a human-approved write, repeated requests verifying the same record, and missing-data blocking. See the [final check report](docs/final-checks/report.json) for provenance; scripted provider tests and the deterministic score are not a live-model autonomy benchmark.
 
-**Submitting this assignment?** Start with the [submission guide](docs/SUBMISSION_GUIDE.md), [live demo sequence](docs/DEMO_SCRIPT.md), [form-answer drafts](docs/FORM_ANSWERS.md) and [interview walkthrough](docs/INTERVIEW_PREP.md). `VERIFY.ps1` reproduces the checks; `RUN.ps1 -Mode groq -Fresh -Faults` starts a separate fresh sandbox for recording. A published repository and shareable live recording URL must still be supplied by the applicant.
+**Submitting this assignment?** Start with the [submission guide](docs/SUBMISSION_GUIDE.md), [live demo sequence](docs/DEMO_SCRIPT.md), [form-answer drafts](docs/FORM_ANSWERS.md) and [interview walkthrough](docs/INTERVIEW_PREP.md). `VERIFY.ps1` reproduces the checks; `RUN.ps1 -Mode groq -Fresh -Faults` starts a separate fresh sandbox for recording. The source repository is [https://github.com/shreekruthi/autonomous-invoice-worker](https://github.com/shreekruthi/autonomous-invoice-worker). A reviewed live recording URL still needs to be added.
 
 ![Running sandbox dashboard](docs/assets/dashboard.png)
 
@@ -196,7 +196,7 @@ Next steps: run a labeled live-model evaluation over varied paraphrases and adve
 
 ## Prepare your GitHub submission
 
-The folder is ready to become a repository. No remote repository has been created or published automatically.
+This project is published at [https://github.com/shreekruthi/autonomous-invoice-worker](https://github.com/shreekruthi/autonomous-invoice-worker). To publish a separate copy under another account, use the commands below.
 
 ```bash
 git init

@@ -1,0 +1,527 @@
+{
+  "task": {
+    "id": "5fe17c6ff6744b7fa9316e95c57b0faa",
+    "goal": "Record the newest invoice from Orbit Cloud.",
+    "mode": "groq",
+    "status": "succeeded",
+    "steps": 10,
+    "summary": "Recorded and verified ORB-1022: INR 12,500.00, due 2026-11-10. Ledger ID inv_7690e83fe775ada8113e2e69.",
+    "created_at": "2026-10-26T06:35:18.547118+00:00",
+    "updated_at": "2026-10-26T06:50:27.559905+00:00",
+    "memory": {
+      "plan": [
+        "discover_vendors",
+        "select_vendor",
+        "search_invoices",
+        "read_invoice",
+        "prepare_invoice",
+        "lookup_record",
+        "record_invoice",
+        "verify_record"
+      ],
+      "vendor_id": "orbit",
+      "prepared": {
+        "source_id": "orbit-latest",
+        "vendor_id": "orbit",
+        "invoice_number": "ORB-1022",
+        "amount_minor": 1250000,
+        "currency": "INR",
+        "issued_at": "2026-10-22",
+        "due_date": "2026-11-10",
+        "source_sha256": "1b9fc3a577c9e6c88e6a7f2af7ffeb08fa3acab16cfc51279067959f0066c243"
+      },
+      "lookup_done": true,
+      "approved": true,
+      "record_id": "inv_7690e83fe775ada8113e2e69",
+      "duplicate": false,
+      "verified": {
+        "record_id": "inv_7690e83fe775ada8113e2e69",
+        "fingerprint": "7690e83fe775ada8113e2e695049316c08ecd9911607979e9a26837fd371ef55",
+        "source_sha256": "1b9fc3a577c9e6c88e6a7f2af7ffeb08fa3acab16cfc51279067959f0066c243",
+        "verified_at": "2026-10-26T06:50:27.541906+00:00",
+        "fields_checked": [
+          "source_id",
+          "vendor_id",
+          "invoice_number",
+          "amount_minor",
+          "currency",
+          "issued_at",
+          "due_date",
+          "source_sha256"
+        ],
+        "record_url": "/company/records/inv_7690e83fe775ada8113e2e69",
+        "source_url": "/company/invoices/orbit-latest"
+      }
+    }
+  },
+  "events": [
+    {
+      "seq": 44,
+      "kind": "created",
+      "created_at": "2026-10-26T06:35:18.562331+00:00",
+      "data": {
+        "goal": "Record the newest invoice from Orbit Cloud.",
+        "mode": "groq"
+      }
+    },
+    {
+      "seq": 45,
+      "kind": "provider_wait",
+      "created_at": "2026-10-26T06:35:18.590329+00:00",
+      "data": {
+        "reason": "provider_quota",
+        "seconds": 35
+      }
+    },
+    {
+      "seq": 46,
+      "kind": "action",
+      "created_at": "2026-10-26T06:35:53.980574+00:00",
+      "data": {
+        "step": 1,
+        "tool": "set_plan",
+        "args": {
+          "steps": [
+            "discover_vendors",
+            "select_vendor",
+            "search_invoices",
+            "read_invoice",
+            "prepare_invoice",
+            "lookup_record",
+            "record_invoice",
+            "verify_record"
+          ]
+        }
+      }
+    },
+    {
+      "seq": 47,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:35:53.994737+00:00",
+      "data": {
+        "tool": "set_plan",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true,
+          "plan": [
+            "discover_vendors",
+            "select_vendor",
+            "search_invoices",
+            "read_invoice",
+            "prepare_invoice",
+            "lookup_record",
+            "record_invoice",
+            "verify_record"
+          ]
+        }
+      }
+    },
+    {
+      "seq": 48,
+      "kind": "action",
+      "created_at": "2026-10-26T06:35:54.759640+00:00",
+      "data": {
+        "step": 2,
+        "tool": "discover_vendors",
+        "args": {}
+      }
+    },
+    {
+      "seq": 49,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:35:54.783073+00:00",
+      "data": {
+        "tool": "discover_vendors",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 50,
+      "kind": "action",
+      "created_at": "2026-10-26T06:35:55.603652+00:00",
+      "data": {
+        "step": 3,
+        "tool": "select_vendor",
+        "args": {
+          "vendor_id": "orbit"
+        }
+      }
+    },
+    {
+      "seq": 51,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:35:55.611721+00:00",
+      "data": {
+        "tool": "select_vendor",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true,
+          "vendor_id": "orbit"
+        }
+      }
+    },
+    {
+      "seq": 52,
+      "kind": "action",
+      "created_at": "2026-10-26T06:35:56.697362+00:00",
+      "data": {
+        "step": 4,
+        "tool": "search_invoices",
+        "args": {}
+      }
+    },
+    {
+      "seq": 53,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:35:56.721148+00:00",
+      "data": {
+        "tool": "search_invoices",
+        "attempt": 1,
+        "elapsed_ms": 31,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 54,
+      "kind": "action",
+      "created_at": "2026-10-26T06:35:57.601618+00:00",
+      "data": {
+        "step": 5,
+        "tool": "read_invoice",
+        "args": {
+          "invoice_id": "orbit-latest"
+        }
+      }
+    },
+    {
+      "seq": 55,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:35:57.625859+00:00",
+      "data": {
+        "tool": "read_invoice",
+        "attempt": 1,
+        "elapsed_ms": 32,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 56,
+      "kind": "planner_error",
+      "created_at": "2026-10-26T06:35:58.536123+00:00",
+      "data": {
+        "error": "Groq must return one complete function call; no action executed."
+      }
+    },
+    {
+      "seq": 57,
+      "kind": "stopped",
+      "created_at": "2026-10-26T06:35:58.553288+00:00",
+      "data": {
+        "status": "failed",
+        "summary": "Groq must return one complete function call; no action executed."
+      }
+    },
+    {
+      "seq": 58,
+      "kind": "resumed",
+      "created_at": "2026-10-26T06:49:51.345705+00:00",
+      "data": {
+        "remaining_steps": 19
+      }
+    },
+    {
+      "seq": 59,
+      "kind": "action",
+      "created_at": "2026-10-26T06:49:52.241837+00:00",
+      "data": {
+        "step": 6,
+        "tool": "prepare_invoice",
+        "args": {}
+      }
+    },
+    {
+      "seq": 60,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:49:52.256840+00:00",
+      "data": {
+        "tool": "prepare_invoice",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true,
+          "prepared": {
+            "source_id": "orbit-latest",
+            "vendor_id": "orbit",
+            "invoice_number": "ORB-1022",
+            "amount_minor": 1250000,
+            "currency": "INR",
+            "issued_at": "2026-10-22",
+            "due_date": "2026-11-10",
+            "source_sha256": "1b9fc3a577c9e6c88e6a7f2af7ffeb08fa3acab16cfc51279067959f0066c243"
+          },
+          "fingerprint": "7690e83fe775ada8113e2e695049316c08ecd9911607979e9a26837fd371ef55",
+          "approval_required": true
+        }
+      }
+    },
+    {
+      "seq": 61,
+      "kind": "action",
+      "created_at": "2026-10-26T06:49:53.124669+00:00",
+      "data": {
+        "step": 7,
+        "tool": "lookup_record",
+        "args": {}
+      }
+    },
+    {
+      "seq": 62,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:49:53.141678+00:00",
+      "data": {
+        "tool": "lookup_record",
+        "attempt": 1,
+        "elapsed_ms": 15,
+        "result": {
+          "ok": true,
+          "existing_record": null
+        }
+      }
+    },
+    {
+      "seq": 63,
+      "kind": "action",
+      "created_at": "2026-10-26T06:49:53.867890+00:00",
+      "data": {
+        "step": 8,
+        "tool": "request_approval",
+        "args": {}
+      }
+    },
+    {
+      "seq": 64,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:49:53.878998+00:00",
+      "data": {
+        "tool": "request_approval",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true,
+          "approval_required": true,
+          "fingerprint": "7690e83fe775ada8113e2e695049316c08ecd9911607979e9a26837fd371ef55"
+        }
+      }
+    },
+    {
+      "seq": 65,
+      "kind": "stopped",
+      "created_at": "2026-10-26T06:49:53.897832+00:00",
+      "data": {
+        "status": "awaiting_approval",
+        "summary": "Invoice validated. A human must approve the exact staged amount before recording."
+      }
+    },
+    {
+      "seq": 66,
+      "kind": "human_review",
+      "created_at": "2026-10-26T06:49:56.127750+00:00",
+      "data": {
+        "decision": "approve",
+        "fingerprint": "7690e83fe775ada8113e2e695049316c08ecd9911607979e9a26837fd371ef55"
+      }
+    },
+    {
+      "seq": 67,
+      "kind": "provider_wait",
+      "created_at": "2026-10-26T06:49:56.147750+00:00",
+      "data": {
+        "reason": "provider_quota",
+        "seconds": 30
+      }
+    },
+    {
+      "seq": 68,
+      "kind": "action",
+      "created_at": "2026-10-26T06:50:26.437663+00:00",
+      "data": {
+        "step": 9,
+        "tool": "record_invoice",
+        "args": {}
+      }
+    },
+    {
+      "seq": 69,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:50:26.480903+00:00",
+      "data": {
+        "tool": "record_invoice",
+        "attempt": 1,
+        "elapsed_ms": 47,
+        "result": {
+          "ok": true,
+          "record": {
+            "id": "inv_7690e83fe775ada8113e2e69",
+            "fingerprint": "7690e83fe775ada8113e2e695049316c08ecd9911607979e9a26837fd371ef55",
+            "payload": {
+              "source_id": "orbit-latest",
+              "vendor_id": "orbit",
+              "invoice_number": "ORB-1022",
+              "amount_minor": 1250000,
+              "currency": "INR",
+              "issued_at": "2026-10-22",
+              "due_date": "2026-11-10",
+              "source_sha256": "1b9fc3a577c9e6c88e6a7f2af7ffeb08fa3acab16cfc51279067959f0066c243"
+            },
+            "created_at": "2026-10-26T06:50:26.472904+00:00",
+            "created": true
+          }
+        }
+      }
+    },
+    {
+      "seq": 70,
+      "kind": "action",
+      "created_at": "2026-10-26T06:50:27.504726+00:00",
+      "data": {
+        "step": 10,
+        "tool": "verify_record",
+        "args": {}
+      }
+    },
+    {
+      "seq": 71,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:50:27.542903+00:00",
+      "data": {
+        "tool": "verify_record",
+        "attempt": 1,
+        "elapsed_ms": 46,
+        "result": {
+          "ok": true,
+          "evidence": {
+            "record_id": "inv_7690e83fe775ada8113e2e69",
+            "fingerprint": "7690e83fe775ada8113e2e695049316c08ecd9911607979e9a26837fd371ef55",
+            "source_sha256": "1b9fc3a577c9e6c88e6a7f2af7ffeb08fa3acab16cfc51279067959f0066c243",
+            "verified_at": "2026-10-26T06:50:27.541906+00:00",
+            "fields_checked": [
+              "source_id",
+              "vendor_id",
+              "invoice_number",
+              "amount_minor",
+              "currency",
+              "issued_at",
+              "due_date",
+              "source_sha256"
+            ],
+            "record_url": "/company/records/inv_7690e83fe775ada8113e2e69",
+            "source_url": "/company/invoices/orbit-latest"
+          }
+        }
+      }
+    },
+    {
+      "seq": 72,
+      "kind": "completed",
+      "created_at": "2026-10-26T06:50:27.548903+00:00",
+      "data": {
+        "reason": "independent_verification",
+        "summary": "Recorded and verified ORB-1022: INR 12,500.00, due 2026-11-10. Ledger ID inv_7690e83fe775ada8113e2e69.",
+        "evidence": {
+          "record_id": "inv_7690e83fe775ada8113e2e69",
+          "fingerprint": "7690e83fe775ada8113e2e695049316c08ecd9911607979e9a26837fd371ef55",
+          "source_sha256": "1b9fc3a577c9e6c88e6a7f2af7ffeb08fa3acab16cfc51279067959f0066c243",
+          "verified_at": "2026-10-26T06:50:27.541906+00:00",
+          "fields_checked": [
+            "source_id",
+            "vendor_id",
+            "invoice_number",
+            "amount_minor",
+            "currency",
+            "issued_at",
+            "due_date",
+            "source_sha256"
+          ],
+          "record_url": "/company/records/inv_7690e83fe775ada8113e2e69",
+          "source_url": "/company/invoices/orbit-latest"
+        }
+      }
+    },
+    {
+      "seq": 73,
+      "kind": "stopped",
+      "created_at": "2026-10-26T06:50:27.564905+00:00",
+      "data": {
+        "status": "succeeded",
+        "summary": "Recorded and verified ORB-1022: INR 12,500.00, due 2026-11-10. Ledger ID inv_7690e83fe775ada8113e2e69."
+      }
+    }
+  ],
+  "snapshot_checks": {
+    "current_ledger_matches_prepared": true,
+    "current_source_matches_prepared": true,
+    "records_for_vendor": 1
+  },
+  "provider_usage": [
+    {
+      "input_tokens": 792,
+      "output_tokens": 75,
+      "total_tokens": 867
+    },
+    {
+      "input_tokens": 884,
+      "output_tokens": 28,
+      "total_tokens": 912
+    },
+    {
+      "input_tokens": 971,
+      "output_tokens": 29,
+      "total_tokens": 1000
+    },
+    {
+      "input_tokens": 1009,
+      "output_tokens": 72,
+      "total_tokens": 1081
+    },
+    {
+      "input_tokens": 1077,
+      "output_tokens": 27,
+      "total_tokens": 1104
+    },
+    {
+      "input_tokens": 1319,
+      "output_tokens": 17,
+      "total_tokens": 1336
+    },
+    {
+      "input_tokens": 1503,
+      "output_tokens": 33,
+      "total_tokens": 1536
+    },
+    {
+      "input_tokens": 1535,
+      "output_tokens": 29,
+      "total_tokens": 1564
+    },
+    {
+      "input_tokens": 1775,
+      "output_tokens": 29,
+      "total_tokens": 1804
+    },
+    {
+      "input_tokens": 2006,
+      "output_tokens": 38,
+      "total_tokens": 2044
+    }
+  ]
+}

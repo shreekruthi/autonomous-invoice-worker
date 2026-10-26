@@ -1,0 +1,470 @@
+{
+  "task": {
+    "id": "60ffdf0c6f784c46a4da7237f482a784",
+    "goal": "Find the latest invoice from Acme Supplies, enter it, and verify it.",
+    "mode": "groq",
+    "status": "succeeded",
+    "steps": 9,
+    "summary": "Verified existing ACM-1020: INR 1,250.50, due 2026-11-15. Ledger ID inv_219bb21d83fe7b84499af58d.",
+    "created_at": "2026-10-26T06:34:26.189734+00:00",
+    "updated_at": "2026-10-26T06:35:07.832711+00:00",
+    "memory": {
+      "plan": [
+        "discover_vendors",
+        "select_vendor",
+        "search_invoices",
+        "read_invoice",
+        "prepare_invoice",
+        "lookup_record",
+        "record_invoice",
+        "verify_record"
+      ],
+      "vendor_id": "acme",
+      "prepared": {
+        "source_id": "acme-latest",
+        "vendor_id": "acme",
+        "invoice_number": "ACM-1020",
+        "amount_minor": 125050,
+        "currency": "INR",
+        "issued_at": "2026-10-20",
+        "due_date": "2026-11-15",
+        "source_sha256": "234e3fd1a1cd127bb076bcf42439a1d3dfc9cf92f14c19ea404dc732de2d07d5"
+      },
+      "lookup_done": true,
+      "record_id": "inv_219bb21d83fe7b84499af58d",
+      "duplicate": true,
+      "verified": {
+        "record_id": "inv_219bb21d83fe7b84499af58d",
+        "fingerprint": "219bb21d83fe7b84499af58d9c24de22c8319b2dad33ed62e0c39c693a6d5af5",
+        "source_sha256": "234e3fd1a1cd127bb076bcf42439a1d3dfc9cf92f14c19ea404dc732de2d07d5",
+        "verified_at": "2026-10-26T06:35:07.816711+00:00",
+        "fields_checked": [
+          "source_id",
+          "vendor_id",
+          "invoice_number",
+          "amount_minor",
+          "currency",
+          "issued_at",
+          "due_date",
+          "source_sha256"
+        ],
+        "record_url": "/company/records/inv_219bb21d83fe7b84499af58d",
+        "source_url": "/company/invoices/acme-latest"
+      }
+    }
+  },
+  "events": [
+    {
+      "seq": 1,
+      "kind": "created",
+      "created_at": "2026-10-26T06:34:26.207580+00:00",
+      "data": {
+        "goal": "Find the latest invoice from Acme Supplies, enter it, and verify it.",
+        "mode": "groq"
+      }
+    },
+    {
+      "seq": 2,
+      "kind": "action",
+      "created_at": "2026-10-26T06:34:27.309289+00:00",
+      "data": {
+        "step": 1,
+        "tool": "set_plan",
+        "args": {
+          "steps": [
+            "discover_vendors",
+            "select_vendor",
+            "search_invoices",
+            "read_invoice",
+            "prepare_invoice",
+            "lookup_record",
+            "record_invoice",
+            "verify_record"
+          ]
+        }
+      }
+    },
+    {
+      "seq": 3,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:34:27.321986+00:00",
+      "data": {
+        "tool": "set_plan",
+        "attempt": 1,
+        "elapsed_ms": 0,
+        "result": {
+          "ok": true,
+          "plan": [
+            "discover_vendors",
+            "select_vendor",
+            "search_invoices",
+            "read_invoice",
+            "prepare_invoice",
+            "lookup_record",
+            "record_invoice",
+            "verify_record"
+          ]
+        }
+      }
+    },
+    {
+      "seq": 4,
+      "kind": "action",
+      "created_at": "2026-10-26T06:34:28.138136+00:00",
+      "data": {
+        "step": 2,
+        "tool": "discover_vendors",
+        "args": {}
+      }
+    },
+    {
+      "seq": 5,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:34:28.166462+00:00",
+      "data": {
+        "tool": "discover_vendors",
+        "attempt": 1,
+        "elapsed_ms": 31,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 6,
+      "kind": "action",
+      "created_at": "2026-10-26T06:34:28.922413+00:00",
+      "data": {
+        "step": 3,
+        "tool": "select_vendor",
+        "args": {
+          "vendor_id": "acme"
+        }
+      }
+    },
+    {
+      "seq": 7,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:34:28.933799+00:00",
+      "data": {
+        "tool": "select_vendor",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true,
+          "vendor_id": "acme"
+        }
+      }
+    },
+    {
+      "seq": 8,
+      "kind": "action",
+      "created_at": "2026-10-26T06:34:29.717322+00:00",
+      "data": {
+        "step": 4,
+        "tool": "search_invoices",
+        "args": {}
+      }
+    },
+    {
+      "seq": 9,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:34:29.739092+00:00",
+      "data": {
+        "tool": "search_invoices",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 10,
+      "kind": "action",
+      "created_at": "2026-10-26T06:34:30.530466+00:00",
+      "data": {
+        "step": 5,
+        "tool": "read_invoice",
+        "args": {
+          "invoice_id": "acme-latest"
+        }
+      }
+    },
+    {
+      "seq": 11,
+      "kind": "tool_error",
+      "created_at": "2026-10-26T06:34:30.562870+00:00",
+      "data": {
+        "tool": "read_invoice",
+        "attempt": 1,
+        "error": "ToolHTTPError",
+        "status": 503,
+        "retryable": true
+      }
+    },
+    {
+      "seq": 12,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:34:30.748510+00:00",
+      "data": {
+        "tool": "read_invoice",
+        "attempt": 2,
+        "elapsed_ms": 219,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 13,
+      "kind": "action",
+      "created_at": "2026-10-26T06:34:31.760451+00:00",
+      "data": {
+        "step": 6,
+        "tool": "prepare_invoice",
+        "args": {}
+      }
+    },
+    {
+      "seq": 14,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:34:31.789179+00:00",
+      "data": {
+        "tool": "prepare_invoice",
+        "attempt": 1,
+        "elapsed_ms": 31,
+        "result": {
+          "ok": true,
+          "prepared": {
+            "source_id": "acme-latest",
+            "vendor_id": "acme",
+            "invoice_number": "ACM-1020",
+            "amount_minor": 125050,
+            "currency": "INR",
+            "issued_at": "2026-10-20",
+            "due_date": "2026-11-15",
+            "source_sha256": "234e3fd1a1cd127bb076bcf42439a1d3dfc9cf92f14c19ea404dc732de2d07d5"
+          },
+          "fingerprint": "219bb21d83fe7b84499af58d9c24de22c8319b2dad33ed62e0c39c693a6d5af5",
+          "approval_required": false
+        }
+      }
+    },
+    {
+      "seq": 15,
+      "kind": "action",
+      "created_at": "2026-10-26T06:34:32.762133+00:00",
+      "data": {
+        "step": 7,
+        "tool": "lookup_record",
+        "args": {}
+      }
+    },
+    {
+      "seq": 16,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:34:32.789584+00:00",
+      "data": {
+        "tool": "lookup_record",
+        "attempt": 1,
+        "elapsed_ms": 31,
+        "result": {
+          "ok": true,
+          "existing_record": null
+        }
+      }
+    },
+    {
+      "seq": 17,
+      "kind": "action",
+      "created_at": "2026-10-26T06:34:33.764040+00:00",
+      "data": {
+        "step": 8,
+        "tool": "record_invoice",
+        "args": {}
+      }
+    },
+    {
+      "seq": 18,
+      "kind": "tool_error",
+      "created_at": "2026-10-26T06:34:33.848010+00:00",
+      "data": {
+        "tool": "record_invoice",
+        "attempt": 1,
+        "error": "ToolHTTPError",
+        "status": 503,
+        "retryable": true
+      }
+    },
+    {
+      "seq": 19,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:34:34.074004+00:00",
+      "data": {
+        "tool": "record_invoice",
+        "attempt": 2,
+        "elapsed_ms": 313,
+        "result": {
+          "ok": true,
+          "record": {
+            "id": "inv_219bb21d83fe7b84499af58d",
+            "vendor_id": "acme",
+            "invoice_number": "ACM-1020",
+            "fingerprint": "219bb21d83fe7b84499af58d9c24de22c8319b2dad33ed62e0c39c693a6d5af5",
+            "payload": {
+              "source_id": "acme-latest",
+              "vendor_id": "acme",
+              "invoice_number": "ACM-1020",
+              "amount_minor": 125050,
+              "currency": "INR",
+              "issued_at": "2026-10-20",
+              "due_date": "2026-11-15",
+              "source_sha256": "234e3fd1a1cd127bb076bcf42439a1d3dfc9cf92f14c19ea404dc732de2d07d5"
+            },
+            "created_at": "2026-10-26T06:34:33.828011+00:00",
+            "created": false
+          }
+        }
+      }
+    },
+    {
+      "seq": 20,
+      "kind": "provider_wait",
+      "created_at": "2026-10-26T06:34:34.106474+00:00",
+      "data": {
+        "reason": "provider_quota",
+        "seconds": 33
+      }
+    },
+    {
+      "seq": 21,
+      "kind": "action",
+      "created_at": "2026-10-26T06:35:07.795757+00:00",
+      "data": {
+        "step": 9,
+        "tool": "verify_record",
+        "args": {}
+      }
+    },
+    {
+      "seq": 22,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:35:07.816711+00:00",
+      "data": {
+        "tool": "verify_record",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true,
+          "evidence": {
+            "record_id": "inv_219bb21d83fe7b84499af58d",
+            "fingerprint": "219bb21d83fe7b84499af58d9c24de22c8319b2dad33ed62e0c39c693a6d5af5",
+            "source_sha256": "234e3fd1a1cd127bb076bcf42439a1d3dfc9cf92f14c19ea404dc732de2d07d5",
+            "verified_at": "2026-10-26T06:35:07.816711+00:00",
+            "fields_checked": [
+              "source_id",
+              "vendor_id",
+              "invoice_number",
+              "amount_minor",
+              "currency",
+              "issued_at",
+              "due_date",
+              "source_sha256"
+            ],
+            "record_url": "/company/records/inv_219bb21d83fe7b84499af58d",
+            "source_url": "/company/invoices/acme-latest"
+          }
+        }
+      }
+    },
+    {
+      "seq": 23,
+      "kind": "completed",
+      "created_at": "2026-10-26T06:35:07.821714+00:00",
+      "data": {
+        "reason": "independent_verification",
+        "summary": "Verified existing ACM-1020: INR 1,250.50, due 2026-11-15. Ledger ID inv_219bb21d83fe7b84499af58d.",
+        "evidence": {
+          "record_id": "inv_219bb21d83fe7b84499af58d",
+          "fingerprint": "219bb21d83fe7b84499af58d9c24de22c8319b2dad33ed62e0c39c693a6d5af5",
+          "source_sha256": "234e3fd1a1cd127bb076bcf42439a1d3dfc9cf92f14c19ea404dc732de2d07d5",
+          "verified_at": "2026-10-26T06:35:07.816711+00:00",
+          "fields_checked": [
+            "source_id",
+            "vendor_id",
+            "invoice_number",
+            "amount_minor",
+            "currency",
+            "issued_at",
+            "due_date",
+            "source_sha256"
+          ],
+          "record_url": "/company/records/inv_219bb21d83fe7b84499af58d",
+          "source_url": "/company/invoices/acme-latest"
+        }
+      }
+    },
+    {
+      "seq": 24,
+      "kind": "stopped",
+      "created_at": "2026-10-26T06:35:07.837712+00:00",
+      "data": {
+        "status": "succeeded",
+        "summary": "Verified existing ACM-1020: INR 1,250.50, due 2026-11-15. Ledger ID inv_219bb21d83fe7b84499af58d."
+      }
+    }
+  ],
+  "snapshot_checks": {
+    "current_ledger_matches_prepared": true,
+    "current_source_matches_prepared": true,
+    "records_for_vendor": 1
+  },
+  "provider_usage": [
+    {
+      "input_tokens": 800,
+      "output_tokens": 52,
+      "total_tokens": 852
+    },
+    {
+      "input_tokens": 892,
+      "output_tokens": 26,
+      "total_tokens": 918
+    },
+    {
+      "input_tokens": 979,
+      "output_tokens": 31,
+      "total_tokens": 1010
+    },
+    {
+      "input_tokens": 1019,
+      "output_tokens": 22,
+      "total_tokens": 1041
+    },
+    {
+      "input_tokens": 1124,
+      "output_tokens": 29,
+      "total_tokens": 1153
+    },
+    {
+      "input_tokens": 1264,
+      "output_tokens": 117,
+      "total_tokens": 1381
+    },
+    {
+      "input_tokens": 1457,
+      "output_tokens": 32,
+      "total_tokens": 1489
+    },
+    {
+      "input_tokens": 1489,
+      "output_tokens": 30,
+      "total_tokens": 1519
+    },
+    {
+      "input_tokens": 1748,
+      "output_tokens": 20,
+      "total_tokens": 1768
+    }
+  ]
+}

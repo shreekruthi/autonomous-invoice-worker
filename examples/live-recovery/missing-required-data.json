@@ -1,0 +1,263 @@
+{
+  "task": {
+    "id": "7221996a89a149a6b793241745e53157",
+    "goal": "Record the latest invoice from Broken Labs.",
+    "mode": "groq",
+    "status": "needs_input",
+    "steps": 6,
+    "summary": "Expected exactly one Due field; ask for a corrected source",
+    "created_at": "2026-10-26T06:50:29.825677+00:00",
+    "updated_at": "2026-10-26T06:51:43.930195+00:00",
+    "memory": {
+      "plan": [
+        "discover_vendors",
+        "select_vendor",
+        "search_invoices",
+        "read_invoice",
+        "prepare_invoice",
+        "lookup_record",
+        "request_approval",
+        "record_invoice",
+        "verify_record"
+      ],
+      "vendor_id": "broken"
+    }
+  },
+  "events": [
+    {
+      "seq": 74,
+      "kind": "created",
+      "created_at": "2026-10-26T06:50:29.833678+00:00",
+      "data": {
+        "goal": "Record the latest invoice from Broken Labs.",
+        "mode": "groq"
+      }
+    },
+    {
+      "seq": 75,
+      "kind": "provider_wait",
+      "created_at": "2026-10-26T06:50:29.858678+00:00",
+      "data": {
+        "reason": "provider_quota",
+        "seconds": 26
+      }
+    },
+    {
+      "seq": 76,
+      "kind": "action",
+      "created_at": "2026-10-26T06:50:56.841437+00:00",
+      "data": {
+        "step": 1,
+        "tool": "set_plan",
+        "args": {
+          "steps": [
+            "discover_vendors",
+            "select_vendor",
+            "search_invoices",
+            "read_invoice",
+            "prepare_invoice",
+            "lookup_record",
+            "request_approval",
+            "record_invoice",
+            "verify_record"
+          ]
+        }
+      }
+    },
+    {
+      "seq": 77,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:50:56.849390+00:00",
+      "data": {
+        "tool": "set_plan",
+        "attempt": 1,
+        "elapsed_ms": 0,
+        "result": {
+          "ok": true,
+          "plan": [
+            "discover_vendors",
+            "select_vendor",
+            "search_invoices",
+            "read_invoice",
+            "prepare_invoice",
+            "lookup_record",
+            "request_approval",
+            "record_invoice",
+            "verify_record"
+          ]
+        }
+      }
+    },
+    {
+      "seq": 78,
+      "kind": "action",
+      "created_at": "2026-10-26T06:50:57.798436+00:00",
+      "data": {
+        "step": 2,
+        "tool": "discover_vendors",
+        "args": {}
+      }
+    },
+    {
+      "seq": 79,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:50:57.811434+00:00",
+      "data": {
+        "tool": "discover_vendors",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 80,
+      "kind": "action",
+      "created_at": "2026-10-26T06:50:58.614311+00:00",
+      "data": {
+        "step": 3,
+        "tool": "select_vendor",
+        "args": {
+          "vendor_id": "broken"
+        }
+      }
+    },
+    {
+      "seq": 81,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:50:58.622230+00:00",
+      "data": {
+        "tool": "select_vendor",
+        "attempt": 1,
+        "elapsed_ms": 16,
+        "result": {
+          "ok": true,
+          "vendor_id": "broken"
+        }
+      }
+    },
+    {
+      "seq": 82,
+      "kind": "action",
+      "created_at": "2026-10-26T06:50:59.461617+00:00",
+      "data": {
+        "step": 4,
+        "tool": "search_invoices",
+        "args": {}
+      }
+    },
+    {
+      "seq": 83,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:50:59.476620+00:00",
+      "data": {
+        "tool": "search_invoices",
+        "attempt": 1,
+        "elapsed_ms": 15,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 84,
+      "kind": "action",
+      "created_at": "2026-10-26T06:50:59.984456+00:00",
+      "data": {
+        "step": 5,
+        "tool": "read_invoice",
+        "args": {
+          "invoice_id": "broken-latest"
+        }
+      }
+    },
+    {
+      "seq": 85,
+      "kind": "observation",
+      "created_at": "2026-10-26T06:51:00.011269+00:00",
+      "data": {
+        "tool": "read_invoice",
+        "attempt": 1,
+        "elapsed_ms": 31,
+        "result": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "seq": 86,
+      "kind": "provider_wait",
+      "created_at": "2026-10-26T06:51:00.836691+00:00",
+      "data": {
+        "reason": "provider_quota",
+        "seconds": 43
+      }
+    },
+    {
+      "seq": 87,
+      "kind": "action",
+      "created_at": "2026-10-26T06:51:43.900474+00:00",
+      "data": {
+        "step": 6,
+        "tool": "prepare_invoice",
+        "args": {}
+      }
+    },
+    {
+      "seq": 88,
+      "kind": "validation_blocked",
+      "created_at": "2026-10-26T06:51:43.917194+00:00",
+      "data": {
+        "tool": "prepare_invoice",
+        "error": "Expected exactly one Due field; ask for a corrected source"
+      }
+    },
+    {
+      "seq": 89,
+      "kind": "stopped",
+      "created_at": "2026-10-26T06:51:43.935195+00:00",
+      "data": {
+        "status": "needs_input",
+        "summary": "Expected exactly one Due field; ask for a corrected source"
+      }
+    }
+  ],
+  "snapshot_checks": {
+    "current_ledger_matches_prepared": false,
+    "current_source_matches_prepared": false,
+    "records_for_vendor": 0
+  },
+  "provider_usage": [
+    {
+      "input_tokens": 906,
+      "output_tokens": 81,
+      "total_tokens": 987
+    },
+    {
+      "input_tokens": 1007,
+      "output_tokens": 31,
+      "total_tokens": 1038
+    },
+    {
+      "input_tokens": 1094,
+      "output_tokens": 28,
+      "total_tokens": 1122
+    },
+    {
+      "input_tokens": 1132,
+      "output_tokens": 78,
+      "total_tokens": 1210
+    },
+    {
+      "input_tokens": 1213,
+      "output_tokens": 28,
+      "total_tokens": 1241
+    },
+    {
+      "input_tokens": 1386,
+      "output_tokens": 54,
+      "total_tokens": 1440
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "collected_at": "2026-10-26T07:02:12.742559+00:00",
+  "mode": "groq",
+  "data": "Synthetic seeded company invoices; actual user-run Groq tasks and SQLite records",
+  "method": "Read-only snapshot projection of persisted tasks and ordered audit events; no new model calls",
+  "omitted": [
+    "LLM conversation history",
+    "reviewer names and notes",
+    "credentials",
+    "raw source bodies"
+  ],
+  "limitations": "Locally editable audit data, not a signed attestation or a statistical model benchmark",
+  "cases": [
+    {
+      "scenario": "approval-and-checkpoint-recovery",
+      "file": "approval-and-checkpoint-recovery.json",
+      "sha256": "b233fbaf9f80414ccb6da1b527b3729802e30569ed3ca7449c7c3ee909fe3d41",
+      "task_id": "5fe17c6ff6744b7fa9316e95c57b0faa",
+      "status": "succeeded",
+      "steps": 10,
+      "current_ledger_matches_prepared": true,
+      "current_source_matches_prepared": true,
+      "records_for_vendor": 1
+    },
+    {
+      "scenario": "injected-failures-and-new-write",
+      "file": "injected-failures-and-new-write.json",
+      "sha256": "3ca347fdd8259967e7fb792d410eefdbe193dedb53cb6701f915e783c66abdf5",
+      "task_id": "60ffdf0c6f784c46a4da7237f482a784",
+      "status": "succeeded",
+      "steps": 9,
+      "current_ledger_matches_prepared": true,
+      "current_source_matches_prepared": true,
+      "records_for_vendor": 1
+    },
+    {
+      "scenario": "duplicate-acme-repeat",
+      "file": "duplicate-acme-repeat.json",
+      "sha256": "15fccefede97af9322b64612ef6f6c4a53e69530cc03b455b713b8cdd7c5c66a",
+      "task_id": "85f3a5fdd9d74eb0a8643b7f23a27c79",
+      "status": "succeeded",
+      "steps": 8,
+      "current_ledger_matches_prepared": true,
+      "current_source_matches_prepared": true,
+      "records_for_vendor": 1
+    },
+    {
+      "scenario": "missing-required-data",
+      "file": "missing-required-data.json",
+      "sha256": "2559fe6ecbd92d51f4217514186206711261e13ab509bc3550e150f106762130",
+      "task_id": "7221996a89a149a6b793241745e53157",
+      "status": "needs_input",
+      "steps": 6,
+      "current_ledger_matches_prepared": false,
+      "current_source_matches_prepared": false,
+      "records_for_vendor": 0
+    }
+  ],
+  "records": [
+    {
+      "id": "inv_219bb21d83fe7b84499af58d",
+      "vendor_id": "acme",
+      "invoice_number": "ACM-1020",
+      "fingerprint": "219bb21d83fe7b84499af58d9c24de22c8319b2dad33ed62e0c39c693a6d5af5",
+      "payload": {
+        "source_id": "acme-latest",
+        "vendor_id": "acme",
+        "invoice_number": "ACM-1020",
+        "amount_minor": 125050,
+        "currency": "INR",
+        "issued_at": "2026-10-20",
+        "due_date": "2026-11-15",
+        "source_sha256": "234e3fd1a1cd127bb076bcf42439a1d3dfc9cf92f14c19ea404dc732de2d07d5"
+      },
+      "created_at": "2026-10-26T06:34:33.828011+00:00"
+    },
+    {
+      "id": "inv_7690e83fe775ada8113e2e69",
+      "vendor_id": "orbit",
+      "invoice_number": "ORB-1022",
+      "fingerprint": "7690e83fe775ada8113e2e695049316c08ecd9911607979e9a26837fd371ef55",
+      "payload": {
+        "source_id": "orbit-latest",
+        "vendor_id": "orbit",
+        "invoice_number": "ORB-1022",
+        "amount_minor": 1250000,
+        "currency": "INR",
+        "issued_at": "2026-10-22",
+        "due_date": "2026-11-10",
+        "source_sha256": "1b9fc3a577c9e6c88e6a7f2af7ffeb08fa3acab16cfc51279067959f0066c243"
+      },
+      "created_at": "2026-10-26T06:50:26.472904+00:00"
+    }
+  ],
+  "observations": {
+    "live_human_approval_and_write": true,
+    "two_live_acme_tasks_verified_same_record": true,
+    "acme_ledger_rows": 1,
+    "broken_labs_ledger_rows": 0,
+    "provider_wait_events_observed": 5,
+    "live_injected_tool_failure_recovery_shown": true
+  }
+}

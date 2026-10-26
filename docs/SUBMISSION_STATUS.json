@@ -12,10 +12,12 @@
   "repository_url": "https://github.com/shreekruthi/autonomous-invoice-worker",
   "hosted_live_video_url": null,
   "pending": [
-    "Verify the final GitHub source upload and remote Actions results",
-    "Record/review and host a live demonstration",
-    "Add tested links to README and form",
+    "Applicant records/reviews and hosts the preferred manual live demonstration",
+    "Add tested video link to README and form",
     "Applicant reviews explanations and submits declarations manually"
   ],
-  "shortlisting_guaranteed": false
+  "shortlisting_guaranteed": false,
+  "github_ci_passed": true,
+  "github_ci_url": "https://github.com/shreekruthi/autonomous-invoice-worker/actions/runs/40282386683",
+  "actual_live_recovery_recording_passed": true
 }

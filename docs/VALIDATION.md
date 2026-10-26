@@ -6,12 +6,12 @@ The author ran `VERIFY.ps1` in normal Windows PowerShell after the restricted ag
 
 | Check | Observed result |
 | --- | --- |
-| Final complete pytest suite | **127 passed**, 0 failed, 0 errors, 0 skipped; about 25 seconds in pytest |
+| Final complete pytest suite | **127 passed**, 0 failed, 0 errors, 0 skipped; latest verification test stage: 21.86 seconds |
 | Coverage | **89.6%** overall, 825 of 921 statements covered |
 | Ruff lint and formatting | Passed |
 | Deterministic reliability evaluation | **10/10** scenarios passed |
 | Runtime | Windows, Python **3.12.14**, dependencies in `requirements.lock` |
-| Final source SHA-256 | `f4f6fc4b48c55a16d5eb7f4b37a48c446bdee4c1be90842c26370029c8b62a25` |
+| Final source SHA-256 | `d385f03b729596c8f7e917cacd6d81d9d2b3f1136ee41e0853f731e7ce8b4038` |
 
 Reports: [stage report](final-checks/report.json), [pytest JUnit results](final-checks/tests.xml), [coverage](final-checks/coverage.json), [reliability evaluation](final-checks/evaluation.json). The digest algorithm in `scripts/verify_submission.py` includes Python sources/tests, the lockfile, project configuration and root PowerShell launchers. Documentation, evidence and video edits do not change that code digest.
 
@@ -36,7 +36,11 @@ Successful snapshot exports additionally compare the current saved payload/finge
 
 Two real incidents informed fixes: a nine-step plan exceeded an overly tight cosmetic schema limit, and a quota failure on a redundant final model request left an already-verified task marked failed. The schema now allows 3–24 descriptive steps without enlarging the execution budget, and the executor completes immediately after verification. Fresh re-verification on resuming an older verified checkpoint is covered by tests; that particular legacy Acme checkpoint has not been confirmed recovered live.
 
-Live provider quota remains external to the application. The header-based forecast and bounded retries reduce avoidable failures, but daily exhaustion and shared organisation traffic can still stop a run. A fresh live injected tool-failure recovery recording is not included; the recovery mechanism is verified by the final deterministic evaluation and the earlier actual browser recording.
+Live provider quota remains external to the application. The header-based forecast and bounded retries reduce avoidable failures, but daily exhaustion and shared organisation traffic can still stop a run. A fresh real Groq Acme run recovered both an injected read outage and an injected lost post-commit response, then independently verified one ledger row. A repeated request reused that row. Orbit initially stopped on an incomplete model function call; explicit checkpoint resume, separate test-operator approval and read-back verification subsequently succeeded. Broken Labs paused for missing input without a write. See the [additional live recovery manifest](../examples/live-recovery/manifest.json). The automated recovery recording passed, but the applicant is making a preferred manual presentation; a reviewed public video URL remains pending.
+
+## Remote CI
+
+[GitHub Actions run #3](https://github.com/shreekruthi/autonomous-invoice-worker/actions/runs/40282386683) passed all three Ubuntu matrix jobs for Python 3.11, 3.12 and 3.13 on source commit `aba9bdba62698da9d1d03536179ebf36a8a06b4d`. Each job runs lint, formatting, the complete tests and deterministic reliability evaluation. This is separate from the live Groq demonstrations.
 
 ## Earlier browser/package baseline — 25 October 2026
 
@@ -46,6 +50,5 @@ The earlier baseline passed 61 tests with 88% coverage, the CLI/network demo, ed
 
 - An actual OpenAI provider run: its adapter passed contract tests; the included live execution evidence is Groq.
 - A Docker image build: configuration is supplied; the local Docker engine was unavailable.
-- GitHub CI, Linux and Python 3.11/3.13 execution: the workflow is supplied but remote results remain pending publication.
 - Public hosting, arbitrary browser/desktop control, OCR/PDF/email ingestion or real ERP integration: outside this prototype.
 - A hosted live recording or form submission: these remain pending. The source repository is [https://github.com/shreekruthi/autonomous-invoice-worker](https://github.com/shreekruthi/autonomous-invoice-worker); inspect its Actions page for the current remote CI result.

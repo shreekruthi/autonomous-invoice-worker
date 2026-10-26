@@ -10,7 +10,7 @@
   },
   "full_suite_rerun_completed": true,
   "run_origin": "User executed VERIFY.ps1 in normal PowerShell; generated files read back by agent",
-  "source_sha256": "f4f6fc4b48c55a16d5eb7f4b37a48c446bdee4c1be90842c26370029c8b62a25",
+  "source_sha256": "d385f03b729596c8f7e917cacd6d81d9d2b3f1136ee41e0853f731e7ce8b4038",
   "coverage_percent": 89.58,
   "lint_passed": true,
   "formatting_passed": true,
@@ -28,13 +28,22 @@
   ],
   "provider_wait_events_observed": 4,
   "live_model_success_rate_measured": false,
-  "live_injected_tool_failure_recovery_recorded": false,
+  "live_injected_tool_failure_recovery_recorded": true,
   "legacy_verified_acme_live_resume_confirmed": false,
   "docker_built": false,
-  "github_ci_executed": false,
+  "github_ci_executed": true,
   "historical_fixes": [
     "Nine-step plan rejected by cosmetic maxItems=8; now bounded at 24 without changing execution budget",
     "Quota failure after successful verification; executor now completes without a final model call",
     "Repeated quota exhaustion; provider remaining/reset headers now pace subsequent requests"
-  ]
+  ],
+  "github_ci_url": "https://github.com/shreekruthi/autonomous-invoice-worker/actions/runs/40282386683",
+  "github_ci_python_versions": [
+    "3.11",
+    "3.12",
+    "3.13"
+  ],
+  "live_recovery_manifest": "../examples/live-recovery/manifest.json",
+  "live_orbit_checkpoint_resume_confirmed": true,
+  "reviewed_hosted_live_video_url": null
 }
